@@ -9,11 +9,13 @@
     <!-- Google Fonts & FontAwesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* RESET & BASE STYLES */
+        /* =====================================================
+           RESET & BASE STYLES
+        ===================================================== */
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +29,9 @@
             overflow-x: hidden;
         }
 
-        /* NAVBAR */
+        /* =====================================================
+           NAVBAR (RESPONSIVE)
+        ===================================================== */
         nav {
             height: 85px;
             background: rgba(255, 255, 255, 0.98);
@@ -85,8 +89,8 @@
             color: #0f244a;
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
-            font-size: 17px;
-            font-weight: 800;
+            font-size: 16px;
+            font-weight: 700;
             letter-spacing: 1.5px;
             padding: 10px 0;
             text-transform: uppercase;
@@ -106,18 +110,20 @@
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: #002b7f;
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
             width: 100%;
         }
 
         .nav-links a.nav-btn-contact {
             background: #002b7f;
             color: #ffffff;
-            font-size: 16px;
+            font-size: 15px;
             padding: 10px 24px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 43, 127, 0.25);
@@ -133,11 +139,23 @@
             box-shadow: 0 6px 18px rgba(0, 43, 127, 0.35);
         }
 
-        /* HERO SECTION */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 26px;
+            color: #001a54;
+            cursor: pointer;
+        }
+
+        /* =====================================================
+           HERO SECTION
+        ===================================================== */
         .hero {
             position: relative;
             width: 100%;
             height: 100vh;
+            min-height: 600px;
             overflow: hidden;
         }
 
@@ -150,7 +168,7 @@
         .overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, rgba(0, 26, 84, 0.65) 0%, rgba(0, 0, 0, 0.45) 100%);
         }
 
         /* HERO LEFT CONTENT */
@@ -167,8 +185,8 @@
         .hero-text h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: clamp(48px, 5.5vw, 80px);
-            letter-spacing: 6px;
+            font-size: clamp(38px, 5vw, 76px);
+            letter-spacing: 4px;
             margin-bottom: 10px;
             text-transform: uppercase;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
@@ -177,10 +195,10 @@
         .hero-text p {
             font-family: 'Chakra Petch', sans-serif;
             font-weight: 600;
-            font-size: clamp(18px, 2.2vw, 26px);
-            letter-spacing: 3px;
-            margin-bottom: 35px;
-            color: #ffffff;
+            font-size: clamp(16px, 2vw, 24px);
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: #d0e1fd;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
         }
 
@@ -188,19 +206,19 @@
         .btn {
             position: relative;
             display: inline-block;
-            padding: 14px 40px;
+            padding: 12px 35px;
             border: 2px solid #ffffff;
             color: #ffffff;
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 800;
-            letter-spacing: 3px;
+            letter-spacing: 2.5px;
             transition: all 0.3s ease;
-            background: rgba(0, 26, 84, 0.4);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 26, 84, 0.5);
+            backdrop-filter: blur(6px);
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
         }
 
@@ -224,16 +242,13 @@
 
         .btn:hover .btn-glitch {
             color: #001a54;
-            text-shadow: 
-                -2px -1px 0px rgba(0, 200, 255, 0.9),
-                 2px  1px 0px rgba(255, 0, 80, 0.9);
             animation: glitch-anim 0.3s infinite alternate;
         }
 
         @keyframes glitch-anim {
-            0% { text-shadow: -2px -1px 0px rgba(0, 255, 255, 0.9), 2px 1px 0px rgba(255, 0, 80, 0.9); }
-            50% { text-shadow: 1.5px 1px 0px rgba(0, 255, 255, 0.9), -1.5px -1px 0px rgba(255, 0, 80, 0.9); }
-            100% { text-shadow: -1px 1.5px 0px rgba(0, 255, 255, 0.9), 1px -1.5px 0px rgba(255, 0, 80, 0.9); }
+            0% { text-shadow: -2px -1px 0px rgba(0, 200, 255, 0.9), 2px 1px 0px rgba(255, 0, 80, 0.9); }
+            50% { text-shadow: 1.5px 1px 0px rgba(0, 200, 255, 0.9), -1.5px -1px 0px rgba(255, 0, 80, 0.9); }
+            100% { text-shadow: -1px 1.5px 0px rgba(0, 200, 255, 0.9), 1px -1.5px 0px rgba(255, 0, 80, 0.9); }
         }
 
         /* HERO RIGHT SLOGAN TEXT */
@@ -251,10 +266,10 @@
 
         .hero-slogan-main {
             font-family: 'Kanit', sans-serif;
-            font-size: clamp(34px, 3.8vw, 54px);
+            font-size: clamp(28px, 3.5vw, 50px);
             font-weight: 800;
             line-height: 1.25;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             color: #ffffff;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         }
@@ -273,8 +288,8 @@
 
         .hero-slogan-sub {
             font-family: 'Kanit', sans-serif;
-            font-size: clamp(20px, 2vw, 26px);
-            font-weight: 500;
+            font-size: clamp(16px, 1.8vw, 24px);
+            font-weight: 400;
             color: #ffffff;
             line-height: 1.6;
             text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
@@ -284,17 +299,25 @@
             color: #ffffff;
             font-weight: 700;
             border-bottom: 3.5px solid #ffb703;
-            padding-bottom: 3px;
+            padding-bottom: 2px;
         }
 
-        /* ORGANIZATION SECTION */
+        /* =====================================================
+           ORGANIZATION SECTION (CANVAS & NODES)
+        ===================================================== */
         .organization {
             position: relative;
             width: 100%;
             min-height: 100vh;
             padding: 90px 0 120px;
             background: #f0f4fb;
+        }
+
+        .org-scroll-container {
+            width: 100%;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 20px;
         }
 
         .bg-factory-left {
@@ -305,7 +328,7 @@
             height: 480px;
             background: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
             clip-path: polygon(0 0, 100% 0, 65% 100%, 0 100%);
-            opacity: 0.15;
+            opacity: 0.12;
             pointer-events: none;
         }
 
@@ -317,7 +340,7 @@
             height: 520px;
             background: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
             clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
-            opacity: 0.15;
+            opacity: 0.12;
             pointer-events: none;
         }
 
@@ -328,36 +351,36 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             padding: 0 40px;
         }
 
         .brand-logo {
             position: absolute;
             left: 50px;
-            top: -10px;
+            top: -5px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
         .brand-logo-icon {
-            width: 45px;
-            height: 45px;
+            width: 44px;
+            height: 44px;
             background: linear-gradient(135deg, #002b7f, #00123d);
             clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #ffffff;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
-            padding-top: 10px;
+            padding-top: 8px;
         }
 
         .brand-logo-text strong {
             display: block;
-            font-size: 18px;
+            font-size: 17px;
             letter-spacing: 1px;
             color: #002b7f;
             line-height: 1.1;
@@ -365,7 +388,7 @@
 
         .brand-logo-text span {
             font-size: 11px;
-            color: #555555;
+            color: #667799;
         }
 
         .organization-title {
@@ -374,17 +397,17 @@
 
         .organization-title span {
             display: block;
-            font-size: 16px;
-            letter-spacing: 6px;
+            font-size: 14px;
+            letter-spacing: 5px;
             color: #002b7f;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .organization-title h2 {
             font-family: "Montserrat", sans-serif;
-            font-size: 38px;
-            letter-spacing: 3px;
+            font-size: clamp(26px, 3vw, 36px);
+            letter-spacing: 2.5px;
             color: #001a54;
             font-weight: 900;
         }
@@ -392,9 +415,9 @@
         .organization-title::after {
             content: "";
             display: block;
-            width: 100px;
+            width: 80px;
             height: 3.5px;
-            margin: 15px auto 0;
+            margin: 12px auto 0;
             background: linear-gradient(90deg, #002b7f, #4175df);
             border-radius: 10px;
         }
@@ -433,7 +456,7 @@
             font-weight: 600;
             font-size: 15px;
             padding: 10px 20px;
-            box-shadow: 0 6px 16px rgba(0, 43, 127, 0.28);
+            box-shadow: 0 6px 16px rgba(0, 43, 127, 0.25);
             white-space: nowrap;
         }
 
@@ -459,7 +482,7 @@
             font-size: 13px;
             font-weight: 600;
             padding: 8px 16px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
             white-space: nowrap;
         }
 
@@ -487,7 +510,7 @@
             font-size: 12px;
             font-weight: 700;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             width: 135px;
             height: 85px;
         }
@@ -585,6 +608,82 @@
             from { opacity: 0; transform: translateY(-30%); }
             to   { opacity: 1; transform: translateY(-50%); }
         }
+
+        /* =====================================================
+           RESPONSIVE DESIGN (MEDIA QUERIES)
+        ===================================================== */
+        @media (max-width: 992px) {
+            nav {
+                padding: 0 25px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 85px;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                gap: 0;
+                padding: 10px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 14px 0;
+                border-bottom: 1px solid #edf2f9;
+            }
+
+            .nav-links a.nav-btn-contact {
+                margin: 15px auto;
+                width: 80%;
+            }
+
+            /* HERO MOBILE */
+            .hero {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: auto;
+                min-height: 100vh;
+                padding: 120px 25px 60px;
+            }
+
+            .hero-text {
+                position: static;
+                transform: none;
+                text-align: center;
+                margin-bottom: 35px;
+            }
+
+            .hero-right-text {
+                position: static;
+                transform: none;
+                text-align: center;
+            }
+
+            .brand-logo {
+                position: static;
+                margin-bottom: 15px;
+            }
+
+            .org-header-wrapper {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+        }
     </style>
 </head>
 
@@ -597,9 +696,12 @@
             <span class="nav-logo-text">BOILER</span>
         </a>
 
-        <div class="nav-links">
-            <a href="./index.html">HOME</a>
-            <!-- ระบุ Relative Path ชัดเจนเพื่อป้องกันการหาไฟล์ไม่พบ -->
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="./index.html" class="active">HOME</a>
             <a href="./project.html">Project</a>
             <a href="./product.html">Product</a>
             <a href="./service.html">Service</a>
@@ -610,14 +712,13 @@
 
     <!-- HERO -->
     <section class="hero">
-        <img src="img/3.png" alt="TTB Boiler">
+        <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80" alt="TTB Boiler">
         <div class="overlay"></div>
 
         <!-- HERO LEFT TEXT -->
         <div class="hero-text">
             <h1>WELCOME</h1>
             <p>TTB Boiler Engineering &amp; Project</p>
-            <!-- ระบุ Relative Path ชัดเจน -->
             <a href="./project.html" class="btn">
                 <span class="btn-glitch">VIEW PROJECT</span>
             </a>
@@ -656,189 +757,199 @@
             </div>
         </div>
 
-        <div class="org-canvas">
+        <!-- SCROLLABLE WRAPPER FOR MOBILE -->
+        <div class="org-scroll-container">
+            <div class="org-canvas">
 
-            <!-- CONNECTOR LINES -->
-            <div class="line v" style="left:950px; top:75px; height:45px;"></div>
-            <div class="line h" style="left:1110px; top:47px; width:50px;"></div>
+                <!-- CONNECTOR LINES -->
+                <div class="line v" style="left:950px; top:75px; height:45px;"></div>
+                <div class="line h" style="left:1110px; top:47px; width:50px;"></div>
 
-            <div class="line v" style="left:950px; top:175px; height:40px;"></div>
-            <div class="line h" style="left:1110px; top:147px; width:50px;"></div>
+                <div class="line v" style="left:950px; top:175px; height:40px;"></div>
+                <div class="line h" style="left:1110px; top:147px; width:50px;"></div>
 
-            <div class="line h" style="left:410px; top:215px; width:1280px;"></div>
-            <div class="line v" style="left:410px; top:215px; height:35px;"></div>
-            <div class="line v" style="left:1035px; top:215px; height:35px;"></div>
-            <div class="line v" style="left:1690px; top:215px; height:35px;"></div>
+                <div class="line h" style="left:410px; top:215px; width:1280px;"></div>
+                <div class="line v" style="left:410px; top:215px; height:35px;"></div>
+                <div class="line v" style="left:1035px; top:215px; height:35px;"></div>
+                <div class="line v" style="left:1690px; top:215px; height:35px;"></div>
 
-            <!-- 1. ENGINEERING BUS -->
-            <div class="line v" style="left:410px; top:305px; height:35px;"></div>
-            <div class="line h" style="left:87px; top:340px; width:640px;"></div>
-            <div class="line v" style="left:87px;  top:340px; height:40px;"></div>
-            <div class="line v" style="left:247px; top:340px; height:40px;"></div>
-            <div class="line v" style="left:407px; top:340px; height:40px;"></div>
-            <div class="line v" style="left:567px; top:340px; height:40px;"></div>
-            <div class="line v" style="left:727px; top:340px; height:40px;"></div>
+                <!-- 1. ENGINEERING BUS -->
+                <div class="line v" style="left:410px; top:305px; height:35px;"></div>
+                <div class="line h" style="left:87px; top:340px; width:640px;"></div>
+                <div class="line v" style="left:87px;  top:340px; height:40px;"></div>
+                <div class="line v" style="left:247px; top:340px; height:40px;"></div>
+                <div class="line v" style="left:407px; top:340px; height:40px;"></div>
+                <div class="line v" style="left:567px; top:340px; height:40px;"></div>
+                <div class="line v" style="left:727px; top:340px; height:40px;"></div>
 
-            <div class="line v" style="left:407px; top:465px; height:40px;"></div>
-            <div class="line h" style="left:175px; top:505px; width:445px;"></div>
-            <div class="line v" style="left:175px; top:505px; height:35px;"></div>
-            <div class="line v" style="left:400px; top:505px; height:35px;"></div>
-            <div class="line v" style="left:620px; top:505px; height:35px;"></div>
+                <div class="line v" style="left:407px; top:465px; height:40px;"></div>
+                <div class="line h" style="left:175px; top:505px; width:445px;"></div>
+                <div class="line v" style="left:175px; top:505px; height:35px;"></div>
+                <div class="line v" style="left:400px; top:505px; height:35px;"></div>
+                <div class="line v" style="left:620px; top:505px; height:35px;"></div>
 
-            <div class="line v" style="left:175px; top:588px; height:22px;"></div>
-            <div class="line h" style="left:95px;  top:610px; width:80px;"></div>
+                <div class="line v" style="left:175px; top:588px; height:22px;"></div>
+                <div class="line h" style="left:95px;  top:610px; width:80px;"></div>
 
-            <div class="line v" style="left:400px; top:588px; height:42px;"></div>
-            <div class="line v" style="left:620px; top:588px; height:42px;"></div>
+                <div class="line v" style="left:400px; top:588px; height:42px;"></div>
+                <div class="line v" style="left:620px; top:588px; height:42px;"></div>
 
-            <!-- 2. MARKETING BUS -->
-            <div class="line v" style="left:1035px; top:305px; height:35px;"></div>
-            <div class="line h" style="left:1170px; top:277px; width:40px;"></div>
+                <!-- 2. MARKETING BUS -->
+                <div class="line v" style="left:1035px; top:305px; height:35px;"></div>
+                <div class="line h" style="left:1170px; top:277px; width:40px;"></div>
 
-            <div class="line h" style="left:917px; top:340px; width:325px;"></div>
-            <div class="line v" style="left:917px; top:340px; height:40px;"></div>
-            <div class="line v" style="left:1077px; top:340px; height:40px;"></div>
-            <div class="line v" style="left:1242px; top:340px; height:40px;"></div>
+                <div class="line h" style="left:917px; top:340px; width:325px;"></div>
+                <div class="line v" style="left:917px; top:340px; height:40px;"></div>
+                <div class="line v" style="left:1077px; top:340px; height:40px;"></div>
+                <div class="line v" style="left:1242px; top:340px; height:40px;"></div>
 
-            <div class="line v" style="left:1077px; top:465px; height:45px;"></div>
-            <div class="line v" style="left:1242px; top:465px; height:45px;"></div>
+                <div class="line v" style="left:1077px; top:465px; height:45px;"></div>
+                <div class="line v" style="left:1242px; top:465px; height:45px;"></div>
 
-            <!-- 3. OFFICE BUS -->
-            <div class="line v" style="left:1690px; top:305px; height:35px;"></div>
-            <div class="line h" style="left:1592px; top:340px; width:190px;"></div>
-            <div class="line v" style="left:1592px; top:340px; height:40px;"></div>
-            <div class="line v" style="left:1782px; top:340px; height:40px;"></div>
+                <!-- 3. OFFICE BUS -->
+                <div class="line v" style="left:1690px; top:305px; height:35px;"></div>
+                <div class="line h" style="left:1592px; top:340px; width:190px;"></div>
+                <div class="line v" style="left:1592px; top:340px; height:40px;"></div>
+                <div class="line v" style="left:1782px; top:340px; height:40px;"></div>
 
-            <!-- MANAGEMENT BOXES -->
-            <a href="managing-director.html" class="org-node main-box pos-md">
-                <div class="icon"><i class="fa-solid fa-user"></i></div>
-                <span>MANAGING DIRECTOR</span>
-            </a>
-            <a href="assistant-managing-director.html" class="org-node asst-box pos-asst-md">
-                <div class="icon"><i class="fa-solid fa-user"></i></div>
-                <span>ASSISTANT MANAGING DIRECTOR</span>
-            </a>
+                <!-- MANAGEMENT BOXES -->
+                <a href="managing-director.html" class="org-node main-box pos-md">
+                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                    <span>MANAGING DIRECTOR</span>
+                </a>
+                <a href="assistant-managing-director.html" class="org-node asst-box pos-asst-md">
+                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                    <span>ASSISTANT MANAGING DIRECTOR</span>
+                </a>
 
-            <a href="general-manager.html" class="org-node main-box pos-gm">
-                <div class="icon"><i class="fa-solid fa-user"></i></div>
-                <span>GENERAL MANAGER</span>
-            </a>
-            <a href="assistant-general-manager.html" class="org-node asst-box pos-asst-gm">
-                <div class="icon"><i class="fa-solid fa-user"></i></div>
-                <span>ASSISTANT GENERAL MANAGER</span>
-            </a>
+                <a href="general-manager.html" class="org-node main-box pos-gm">
+                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                    <span>GENERAL MANAGER</span>
+                </a>
+                <a href="assistant-general-manager.html" class="org-node asst-box pos-asst-gm">
+                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                    <span>ASSISTANT GENERAL MANAGER</span>
+                </a>
 
-            <!-- MAIN DEPARTMENTS -->
-            <a href="engineering-manager.html" class="org-node main-box pos-eng-mgr">
-                <div class="icon"><i class="fa-solid fa-gear"></i></div>
-                <span>ENGINEERING MANAGER</span>
-            </a>
+                <!-- MAIN DEPARTMENTS -->
+                <a href="engineering-manager.html" class="org-node main-box pos-eng-mgr">
+                    <div class="icon"><i class="fa-solid fa-gear"></i></div>
+                    <span>ENGINEERING MANAGER</span>
+                </a>
 
-            <a href="marketing-manager.html" class="org-node main-box pos-mkt-mgr">
-                <div class="icon"><i class="fa-solid fa-bullhorn"></i></div>
-                <span>MARKETING MANAGER</span>
-            </a>
-            <a href="assistant-marketing-manager.html" class="org-node asst-box pos-asst-mkt">
-                <div class="icon"><i class="fa-solid fa-user"></i></div>
-                <span>ASSISTANT MARKETING MANAGER</span>
-            </a>
+                <a href="marketing-manager.html" class="org-node main-box pos-mkt-mgr">
+                    <div class="icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <span>MARKETING MANAGER</span>
+                </a>
+                <a href="assistant-marketing-manager.html" class="org-node asst-box pos-asst-mkt">
+                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                    <span>ASSISTANT MARKETING MANAGER</span>
+                </a>
 
-            <a href="office.html" class="org-node main-box pos-off-mgr">
-                <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
-                <span>OFFICE</span>
-            </a>
+                <a href="office.html" class="org-node main-box pos-off-mgr">
+                    <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <span>OFFICE</span>
+                </a>
 
-            <!-- ENGINEERING SUB-DEPARTMENTS -->
-            <a href="design-estimate.html" class="org-node sub-box pos-design">
-                <div class="top-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <span>DESIGN &amp;<br>ESTIMATE<br>ENGINEER</span>
-            </a>
-            <a href="admin-engineer.html" class="org-node sub-box pos-admin-e">
-                <div class="top-icon"><i class="fa-solid fa-user-gear"></i></div>
-                <span>ADMIN<br>ENGINEER</span>
-            </a>
+                <!-- ENGINEERING SUB-DEPARTMENTS -->
+                <a href="design-estimate.html" class="org-node sub-box pos-design">
+                    <div class="top-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <span>DESIGN &amp;<br>ESTIMATE<br>ENGINEER</span>
+                </a>
+                <a href="admin-engineer.html" class="org-node sub-box pos-admin-e">
+                    <div class="top-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <span>ADMIN<br>ENGINEER</span>
+                </a>
 
-            <!-- PROJECT ENGINEER -->
-            <a href="./project.html" class="org-node sub-box pos-proj-e">
-                <div class="top-icon"><i class="fa-solid fa-user-helmet-safety"></i></div>
-                <span>PROJECT<br>ENGINEER</span>
-            </a>
+                <a href="./project.html" class="org-node sub-box pos-proj-e">
+                    <div class="top-icon"><i class="fa-solid fa-user-helmet-safety"></i></div>
+                    <span>PROJECT<br>ENGINEER</span>
+                </a>
 
-            <a href="quality-control.html" class="org-node sub-box pos-qc">
-                <div class="top-icon"><i class="fa-solid fa-clipboard-check"></i></div>
-                <span>QUALITY<br>CONTROL</span>
-            </a>
-            <a href="safety-officer.html" class="org-node sub-box pos-safety">
-                <div class="top-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <span>SAFETY<br>OFFICER</span>
-            </a>
+                <a href="quality-control.html" class="org-node sub-box pos-qc">
+                    <div class="top-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <span>QUALITY<br>CONTROL</span>
+                </a>
+                <a href="safety-officer.html" class="org-node sub-box pos-safety">
+                    <div class="top-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <span>SAFETY<br>OFFICER</span>
+                </a>
 
-            <!-- ENGINEERING TEAMS -->
-            <a href="engineers.html" class="org-node main-box pos-engs">
-                <div class="icon" style="width:26px;height:26px;font-size:12px;"><i class="fa-solid fa-user-check"></i></div>
-                <span>ENGINEERS</span>
-            </a>
-            <a href="foremen.html" class="org-node main-box pos-foremen">
-                <div class="icon" style="width:26px;height:26px;font-size:12px;"><i class="fa-solid fa-users-gear"></i></div>
-                <span>FOREMEN</span>
-            </a>
-            <a href="service-team.html" class="org-node main-box pos-service">
-                <div class="icon" style="width:26px;height:26px;font-size:12px;"><i class="fa-solid fa-wrench"></i></div>
-                <span>SERVICE TEAM</span>
-            </a>
+                <!-- ENGINEERING TEAMS -->
+                <a href="engineers.html" class="org-node main-box pos-engs">
+                    <div class="icon" style="width:26px;height:26px;font-size:12px;"><i class="fa-solid fa-user-check"></i></div>
+                    <span>ENGINEERS</span>
+                </a>
+                <a href="foremen.html" class="org-node main-box pos-foremen">
+                    <div class="icon" style="width:26px;height:26px;font-size:12px;"><i class="fa-solid fa-users-gear"></i></div>
+                    <span>FOREMEN</span>
+                </a>
+                <a href="service-team.html" class="org-node main-box pos-service">
+                    <div class="icon" style="width:26px;height:26px;font-size:12px;"><i class="fa-solid fa-wrench"></i></div>
+                    <span>SERVICE TEAM</span>
+                </a>
 
-            <!-- ENGINEER TYPES -->
-            <a href="electrical-engineer.html" class="org-node item-box pos-elec"><i class="fa-solid fa-bolt"></i> ELECTRICAL</a>
-            <a href="civil-engineer.html" class="org-node item-box pos-civil"><i class="fa-solid fa-building"></i> CIVIL</a>
-            <a href="mechanical-engineer.html" class="org-node item-box pos-mech"><i class="fa-solid fa-gears"></i> MECHANICAL</a>
+                <!-- ENGINEER TYPES -->
+                <a href="electrical-engineer.html" class="org-node item-box pos-elec"><i class="fa-solid fa-bolt"></i> ELECTRICAL</a>
+                <a href="civil-engineer.html" class="org-node item-box pos-civil"><i class="fa-solid fa-building"></i> CIVIL</a>
+                <a href="mechanical-engineer.html" class="org-node item-box pos-mech"><i class="fa-solid fa-gears"></i> MECHANICAL</a>
 
-            <!-- FOREMEN LIST -->
-            <a href="foreman-1.html" class="org-node item-box pos-fm1"><i class="fa-solid fa-users"></i> FOREMAN 1</a>
-            <a href="foreman-2.html" class="org-node item-box pos-fm2"><i class="fa-solid fa-users"></i> FOREMAN 2</a>
-            <a href="foreman-3.html" class="org-node item-box pos-fm3"><i class="fa-solid fa-users"></i> FOREMAN 3</a>
+                <!-- FOREMEN LIST -->
+                <a href="foreman-1.html" class="org-node item-box pos-fm1"><i class="fa-solid fa-users"></i> FOREMAN 1</a>
+                <a href="foreman-2.html" class="org-node item-box pos-fm2"><i class="fa-solid fa-users"></i> FOREMAN 2</a>
+                <a href="foreman-3.html" class="org-node item-box pos-fm3"><i class="fa-solid fa-users"></i> FOREMAN 3</a>
 
-            <!-- SERVICE LIST -->
-            <a href="service-1.html" class="org-node item-box pos-sv1"><i class="fa-solid fa-user"></i> SERVICE 1</a>
-            <a href="service-2.html" class="org-node item-box pos-sv2"><i class="fa-solid fa-user"></i> SERVICE 2</a>
-            <a href="service-3.html" class="org-node item-box pos-sv3"><i class="fa-solid fa-user"></i> SERVICE 3</a>
+                <!-- SERVICE LIST -->
+                <a href="service-1.html" class="org-node item-box pos-sv1"><i class="fa-solid fa-user"></i> SERVICE 1</a>
+                <a href="service-2.html" class="org-node item-box pos-sv2"><i class="fa-solid fa-user"></i> SERVICE 2</a>
+                <a href="service-3.html" class="org-node item-box pos-sv3"><i class="fa-solid fa-user"></i> SERVICE 3</a>
 
-            <!-- MARKETING SUB-DEPARTMENTS -->
-            <a href="admin-marketing.html" class="org-node sub-box pos-admin-m">
-                <div class="top-icon"><i class="fa-solid fa-folder"></i></div>
-                <span>ADMIN<br>MARKETING</span>
-            </a>
-            <a href="online.html" class="org-node sub-box pos-online">
-                <div class="top-icon"><i class="fa-solid fa-globe"></i></div>
-                <span>ONLINE</span>
-            </a>
-            <a href="marketing.html" class="org-node sub-box pos-mkt-sub">
-                <div class="top-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                <span>MARKETING</span>
-            </a>
+                <!-- MARKETING SUB-DEPARTMENTS -->
+                <a href="admin-marketing.html" class="org-node sub-box pos-admin-m">
+                    <div class="top-icon"><i class="fa-solid fa-folder"></i></div>
+                    <span>ADMIN<br>MARKETING</span>
+                </a>
+                <a href="online.html" class="org-node sub-box pos-online">
+                    <div class="top-icon"><i class="fa-solid fa-globe"></i></div>
+                    <span>ONLINE</span>
+                </a>
+                <a href="marketing.html" class="org-node sub-box pos-mkt-sub">
+                    <div class="top-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <span>MARKETING</span>
+                </a>
 
-            <!-- ONLINE SUB ITEMS -->
-            <a href="influencer.html" class="org-node item-box pos-inf"><i class="fa-solid fa-user-group"></i> INFLUENCER</a>
-            <a href="content-creator.html" class="org-node item-box pos-cc"><i class="fa-solid fa-pen-to-square"></i> CONTENT CREATOR</a>
-            <a href="photographer.html" class="org-node item-box pos-photo"><i class="fa-solid fa-camera"></i> PHOTOGRAPHER</a>
+                <!-- ONLINE SUB ITEMS -->
+                <a href="influencer.html" class="org-node item-box pos-inf"><i class="fa-solid fa-user-group"></i> INFLUENCER</a>
+                <a href="content-creator.html" class="org-node item-box pos-cc"><i class="fa-solid fa-pen-to-square"></i> CONTENT CREATOR</a>
+                <a href="photographer.html" class="org-node item-box pos-photo"><i class="fa-solid fa-camera"></i> PHOTOGRAPHER</a>
 
-            <!-- MARKETING SUB ITEMS -->
-            <a href="sale-1.html" class="org-node item-box pos-s1"><i class="fa-solid fa-user"></i> SALE 1</a>
-            <a href="sale-2.html" class="org-node item-box pos-s2"><i class="fa-solid fa-user"></i> SALE 2</a>
-            <a href="sale-3.html" class="org-node item-box pos-s3"><i class="fa-solid fa-user"></i> SALE 3</a>
+                <!-- MARKETING SUB ITEMS -->
+                <a href="sale-1.html" class="org-node item-box pos-s1"><i class="fa-solid fa-user"></i> SALE 1</a>
+                <a href="sale-2.html" class="org-node item-box pos-s2"><i class="fa-solid fa-user"></i> SALE 2</a>
+                <a href="sale-3.html" class="org-node item-box pos-s3"><i class="fa-solid fa-user"></i> SALE 3</a>
 
-            <!-- OFFICE SUB-DEPARTMENTS -->
-            <a href="accounting.html" class="org-node sub-box pos-acct">
-                <div class="top-icon"><i class="fa-solid fa-calculator"></i></div>
-                <span>ACCOUNTING<br>OFFICE</span>
-            </a>
-            <a href="purchasing.html" class="org-node sub-box pos-purch">
-                <div class="top-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-                <span>PURCHASING<br>OFFICER</span>
-            </a>
+                <!-- OFFICE SUB-DEPARTMENTS -->
+                <a href="accounting.html" class="org-node sub-box pos-acct">
+                    <div class="top-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <span>ACCOUNTING<br>OFFICE</span>
+                </a>
+                <a href="purchasing.html" class="org-node sub-box pos-purch">
+                    <div class="top-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <span>PURCHASING<br>OFFICER</span>
+                </a>
 
+            </div>
         </div>
 
     </section>
+
+    <!-- JAVASCRIPT FOR MOBILE MENU -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+    </script>
 
 </body>
 
