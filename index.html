@@ -24,13 +24,13 @@
 
         body {
             font-family: "Kanit", sans-serif;
-            background: #0f172a;
+            background: #001a54;
             color: #102a56;
             overflow-x: hidden;
         }
 
         /* =====================================================
-           NAVBAR (RESPONSIVE)
+           NAVBAR (RESPONSIVE & CLICKABLE)
         ===================================================== */
         nav {
             height: 85px;
@@ -43,7 +43,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 9999;
+            z-index: 99999; /* ให้ Navbar อยู่ชั้นบนสุดเสมอ */
             box-shadow: 0 4px 20px rgba(0, 43, 127, 0.08);
             backdrop-filter: blur(10px);
         }
@@ -53,6 +53,7 @@
             align-items: center;
             gap: 12px;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .nav-logo-box {
@@ -96,6 +97,8 @@
             padding: 10px 0;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 10;
         }
 
         .nav-links a::after {
@@ -149,7 +152,7 @@
         }
 
         /* =====================================================
-           HERO SECTION (DISPLAY IMAGE FULLY)
+           HERO SECTION
         ===================================================== */
         .hero {
             position: relative;
@@ -172,21 +175,22 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-            z-index: 0;
+            z-index: 1;
         }
 
-        /* เลเยอร์สีโปร่งแสงเพื่อให้อ่านตัวหนังสือชัดเจน */
+        /* เลเยอร์สีโปร่งแสง (ไม่บล็อกการคลิก) */
         .overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg, rgba(0, 26, 84, 0.45) 0%, rgba(0, 13, 43, 0.35) 100%);
-            z-index: 1;
+            z-index: 2;
+            pointer-events: none; /* สำคัญ: ทำให้คลิกทะลุเลเยอร์นี้ได้ */
         }
 
         /* HERO LEFT CONTENT */
         .hero-text {
             position: relative;
-            z-index: 2;
+            z-index: 10; /* ดันเนื้อหาและปุ่มขึ้นมาอยู่หน้าสุด */
             color: #ffffff;
             max-width: 550px;
             animation: fadeUp 1s ease;
@@ -226,12 +230,13 @@
             font-weight: 800;
             letter-spacing: 2.5px;
             transition: all 0.3s ease;
-            background: rgba(0, 26, 84, 0.6);
+            background: rgba(0, 26, 84, 0.7);
             backdrop-filter: blur(6px);
             overflow: hidden;
             border-radius: 6px;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 20;
         }
 
         .btn-glitch {
@@ -258,11 +263,12 @@
         /* HERO RIGHT SLOGAN TEXT */
         .hero-right-text {
             position: relative;
-            z-index: 2;
+            z-index: 10;
             max-width: 550px;
             text-align: right;
             color: #ffffff;
             animation: fadeUp 1.2s ease;
+            pointer-events: none;
         }
 
         .hero-slogan-main {
@@ -331,6 +337,7 @@
                 padding: 10px 0;
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                 display: none;
+                z-index: 99999;
             }
 
             .nav-links.show {
@@ -380,7 +387,7 @@
             text-align: center;
             border-top: 3px solid #002b7f;
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
 
         footer p {
@@ -394,29 +401,28 @@
 
     <!-- NAVBAR -->
     <nav>
-        <a href="./index.html" class="nav-logo">
+        <a href="index.html" class="nav-logo">
             <div class="nav-logo-box">TTB</div>
             <span class="nav-logo-text">BOILER</span>
         </a>
 
-        <button class="mobile-menu-btn" onclick="toggleMenu()">
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Navigation">
             <i class="fa-solid fa-bars"></i>
         </button>
 
         <div class="nav-links" id="navLinks">
-            <a href="./index.html" class="active">HOME</a>
-            <a href="./project.html">Project</a>
-            <a href="./product.html">Product</a>
-            <a href="./service.html">Service</a>
-            <a href="./about.html">About us</a>
-            <a href="./contact.html" class="nav-btn-contact">Contact</a>
+            <a href="index.html" class="active">HOME</a>
+            <a href="project.html">Project</a>
+            <a href="product.html">Product</a>
+            <a href="service.html">Service</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html" class="nav-btn-contact">Contact</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH DIRECT <img> -->
+    <!-- HERO SECTION -->
     <section class="hero">
-        <!-- ชี้ไปยังไฟล์รูปภาพในเครื่อง (หากไฟล์ชื่ออื่น สามารถแก้ path ตรง src ได้เลยครับ) -->
-        <img src="./img/3.png" 
+        <img src="img/3.png" 
              alt="TTB Boiler Hero" 
              class="hero-bg-img"
              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80';">
@@ -427,7 +433,7 @@
         <div class="hero-text">
             <h1>WELCOME</h1>
             <p>TTB Boiler Engineering &amp; Project</p>
-            <a href="./project.html" class="btn">
+            <a href="project.html" class="btn">
                 <span class="btn-glitch">VIEW PROJECT</span>
             </a>
         </div>
