@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects & Services - TTB Boiler Engineering</title>
 
-    <!-- Google Fonts & FontAwesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
@@ -419,7 +418,7 @@
         }
 
         /* =====================================================
-           MODAL POPUP LIGHTBOX (WITH CLICKABLE LINK CARDS)
+           MODAL POPUP LIGHTBOX
         ===================================================== */
         .modal {
             display: none;
@@ -618,35 +617,31 @@
 
 <body>
 
-    <!-- NAVBAR WITH MOBILE RESPONSIVE HAMBURGER -->
     <nav>
-        <a href="./index.html" class="nav-logo-mobile">
+        <a href="index.html" class="nav-logo-mobile">
             <div class="nav-logo-box">TTB</div>
             <span>BOILER</span>
         </a>
 
-        <button class="mobile-menu-btn" onclick="toggleMenu()">
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Navigation">
             <i class="fa-solid fa-bars"></i>
         </button>
 
         <div class="nav-links" id="navLinks">
-            <a href="./index.html">HOME</a>
-            <a href="./project.html" class="active">Project</a>
-            <a href="./product.html">Product</a>
-            <a href="./service.html">Service</a>
-            <a href="./about.html">About us</a>
-            <a href="./contact.html" class="nav-btn-contact">Contact</a>
+            <a href="index.html">HOME</a>
+            <a href="project.html" class="active">Project</a>
+            <a href="product.html">Product</a>
+            <a href="service.html">Service</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html" class="nav-btn-contact">Contact</a>
         </div>
     </nav>
 
-    <!-- INDUSTRIAL BACKGROUND OVERLAYS -->
     <div class="bg-factory-chimney-left"></div>
     <div class="bg-boiler-plant-right"></div>
 
-    <!-- PROJECT PAGE CONTAINER -->
     <div class="project-page-container">
 
-        <!-- BRANDING LOGO TOP-LEFT -->
         <div class="top-left-brand-wrapper">
             <div class="brand-title-box">
                 <span class="title-ttb">TTB</span>
@@ -656,27 +651,27 @@
             <div class="brand-sub-red">For Boiler Systems</div>
         </div>
 
-        <!-- HORIZONTAL SERVICE / PROJECT ROWS -->
         <div class="service-rows-wrapper">
 
-            <!-- 1. Boiler PM Service -->
             <div class="service-row-card blue-bar" onclick="openCategoryModal('Boiler PM Service', 'งานบริการซ่อมบำรุงและล้างทำความสะอาด Boiler', [
                 {
                     client: 'Gulf Chana Green Company Limited',
                     title: 'PM ESP & Boiler Maintenance System at JANA Songkhla',
                     desc: 'งานซ่อมบำรุงเชิงป้องกัน ล้างทำความสะอาดท่อไฟและล้างตะกรันในระบบหม้อต้ม',
                     location: 'Songkhla',
-                    link: './project-detail.html?id=gulf-jana'
+                    link: 'service-boiler-pm.html'
                 }
             ])">
                 <div class="row-col-title">
                     <div class="title-accent-bar"></div>
-                    <div class="row-title-text">Boiler PM<br>Service</div>
+                   <div class="row-title-text">Maintenance<br>ประจำเดือน/ประจำปี<br>เซ็นต์รับรอง</div>
                 </div>
                 <div class="row-col-details">
                     <ul class="row-details-list">
-                        <li>งานทำความสะอาดท่อไฟ</li>
+                        <li>งานทำความสะอาดด้านสัมผัสไฟ</li>
+                        <li>งานทำความสะอาดด้านสัมผัสน้ำ</li>
                         <li>งานล้างตะกรัน Boiler</li>
+                        <li>บริการเซ็นต์รับรอง</li>
                     </ul>
                 </div>
                 <div class="row-col-image">
@@ -685,33 +680,32 @@
                 </div>
             </div>
 
-            <!-- 2. Combustion Chamber Design, Installation & Repair -->
             <div class="service-row-card" onclick="openCategoryModal('Combustion Chamber Design, Installation & Repair', 'งานออกแบบ ติดตั้ง และซ่อมแซมห้องเผาไหม้', [
                 {
                     client: 'Betong Green Power Company Limited',
                     title: 'Refractory Combustion Repair Work (SD2568)',
                     desc: 'งานซ่อมแซมและหล่ออิฐทนไฟบริเวณห้องเผาไหม้ (Refractory Combustion Repair) ตามวาระการหยุดพักเครื่อง',
                     location: 'Yala',
-                    link: './project-detail.html?id=betong-green'
+                    link: 'service-boiler-pm.html'
                 },
                 {
                     client: 'Panel Plus Company Limited',
                     title: 'Vyncke Stove Repair, Including Cooling Pipes',
                     desc: 'งานซ่อมแซมเตาเผา Vyncke พร้อมตรวจสอบและเปลี่ยนท่อน้ำระบายความร้อน',
                     location: 'Songkhla',
-                    link: './project-detail.html?id=panel-vyncke'
+                    link: 'service-boiler-pm.html'
                 },
                 {
                     client: 'Panel Plus Company Limited',
                     title: 'Repair Work on the Furnace Wall and Burner Head (PB)',
                     desc: 'งานซ่อมแซมผนังห้องเผาไหม้เตาหลอม (Furnace Wall) และปรับแต่งหัวเผา (Burner Head)',
                     location: 'Songkhla',
-                    link: './project-detail.html?id=panel-burner'
+                    link: 'service-boiler-pm.html'
                 }
             ])">
                 <div class="row-col-title">
                     <div class="title-accent-bar"></div>
-                    <div class="row-title-text">Combustion Chamber<br>Design &amp; Repair</div>
+                    <div class="row-title-text">ห้องเผาไหม้บอยเลอร์</div>
                 </div>
                 <div class="row-col-details">
                     <ul class="row-details-list">
@@ -725,26 +719,25 @@
                 </div>
             </div>
 
-            <!-- 3. Fuel Feeding System -->
             <div class="service-row-card blue-bar" onclick="openCategoryModal('Fuel Feeding System', 'งานระบบลำเลียงและป้อนเชื้อเพลิง', [
                 {
                     client: 'Price of Wood Green Energy Co., Ltd.',
                     title: 'Fabrication and Installation of Step Grate Structure, Zones 1-4',
                     desc: 'งานขึ้นรูปและประกอบโครงสร้างเหล็ก พร้อมติดตั้งระบบตะกรับแบบไล่ระดับ (Step Grate Structure)',
                     location: 'Narathiwat',
-                    link: './project-detail.html?id=pow-stepgrate'
+                    link: 'service-boiler-pm.html'
                 },
                 {
                     client: 'Price of Wood Green Energy Co., Ltd.',
                     title: 'Manufacturing of Screw Conveyor W450 x L8 M',
                     desc: 'งานขึ้นรูปและผลิตเกลียวลำเลียง (Screw Conveyor) ขนาด W450 x L8 M สำหรับระบบลำเลียงเชื้อเพลิงชีวมวล',
                     location: 'Narathiwat',
-                    link: './project-detail.html?id=pow-screw'
+                    link: 'service-boiler-pm.html'
                 }
             ])">
                 <div class="row-col-title">
                     <div class="title-accent-bar"></div>
-                    <div class="row-title-text">Fuel Feeding<br>System</div>
+                    <div class="row-title-text">ชุดป้อนเชื้อเพลิง</div>
                 </div>
                 <div class="row-col-details">
                     <ul class="row-details-list">
@@ -759,19 +752,18 @@
                 </div>
             </div>
 
-            <!-- 4. Economizer System -->
             <div class="service-row-card blue-bar" onclick="openCategoryModal('Economizer System', 'งานระบบ Economizer ดึงความร้อนกลับคืน', [
                 {
                     client: 'TTB Boiler Engineering Project',
                     title: 'Economizer Tube Replacement & Energy Recovery System',
                     desc: 'งานติดตั้งและเปลี่ยนชุดท่อ Economizer เพื่อดึงความร้อนจากไอเสียกลับมาประหยัดพลังงาน',
                     location: 'Industrial Estate',
-                    link: './project-detail.html?id=economizer'
+                    link: 'service-boiler-pm.html'
                 }
             ])">
                 <div class="row-col-title">
                     <div class="title-accent-bar"></div>
-                    <div class="row-title-text">Economizer<br>System</div>
+                    <div class="row-title-text">FD & ID FAN  Ducting Multicyclone  ESP Structure Chimney</div>
                 </div>
                 <div class="row-col-details">
                     <ul class="row-details-list">
@@ -785,26 +777,25 @@
                 </div>
             </div>
 
-            <!-- 5. Multicyclone / ESP -->
             <div class="service-row-card" onclick="openCategoryModal('Multicyclone / ESP', 'งานระบบดักจับฝุ่นละอองและมลพิษ', [
                 {
                     client: 'Panel Plus Bio-Power Co., Ltd.',
                     title: 'Manufacturing and Installation of Hopper ESP1-3',
                     desc: 'งานผลิตและประกอบติดตั้งกรวยรับเถ้า (Hopper ESP) ชุดที่ 1 ถึง 3 สำหรับระบบดักจับฝุ่นแบบไฟฟ้าสถิต',
                     location: 'Songkhla',
-                    link: './project-detail.html?id=panel-hopper'
+                    link: 'service-boiler-pm.html'
                 },
                 {
                     client: 'Gulf Chana Green Company Limited',
                     title: 'PM ESP at JANA Songkhla',
                     desc: 'งานซ่อมบำรุงเชิงป้องกันและทำความสะอาดระบบดักจับฝุ่นไฟฟ้าสถิต',
                     location: 'Songkhla',
-                    link: './project-detail.html?id=gulf-esp'
+                    link: 'service-boiler-pm.html'
                 }
             ])">
                 <div class="row-col-title">
                     <div class="title-accent-bar"></div>
-                    <div class="row-title-text">Multicyclone /<br>ESP System</div>
+                    <div class="row-title-text">Economizer<br>System</div>
                 </div>
                 <div class="row-col-details">
                     <ul class="row-details-list">
@@ -819,19 +810,18 @@
                 </div>
             </div>
 
-            <!-- 6. FD / ID Fan & Ducting -->
             <div class="service-row-card" onclick="openCategoryModal('FD / ID Fan & Ducting', 'งานพัดลมเติมอากาศ พัดลมดูดควัน และระบบท่อลม', [
                 {
                     client: 'Industrial Power Plant Project',
                     title: 'FD & ID Fan Overhaul & Ducting Modification',
                     desc: 'งานซ่อมบำรุงพัดลม FD/ID Fan ปรับตั้งศูนย์ พ่นพอกใบพัด และเดินท่อ Ducting ใหม่',
                     location: 'Songkhla',
-                    link: './project-detail.html?id=fan-ducting'
+                    link: 'service-boiler-pm.html'
                 }
             ])">
                 <div class="row-col-title">
                     <div class="title-accent-bar"></div>
-                    <div class="row-title-text">FD / ID Fan<br>&amp; Ducting</div>
+                    <div class="row-title-text">Machine</div>
                 </div>
                 <div class="row-col-details">
                     <ul class="row-details-list">
@@ -845,19 +835,18 @@
                 </div>
             </div>
 
-            <!-- 7. PM Service & Spare Parts -->
             <div class="service-row-card blue-bar" onclick="openCategoryModal('PM Service & Spare Parts', 'งานตรวจเช็กตามรอบ PM และจัดหาอะไหล่', [
                 {
                     client: 'Gulf Chana Green Company Limited',
                     title: 'Annual PM Service & Spare Parts Replacement',
                     desc: 'งานตรวจเช็กและเปลี่ยนอะไหล่ตามวาระ PM เพื่อความพร้อมในการใช้งานอย่างต่อเนื่อง',
                     location: 'Songkhla',
-                    link: './project-detail.html?id=gulf-pm'
+                    link: 'service-boiler-pm.html'
                 }
             ])">
                 <div class="row-col-title">
                     <div class="title-accent-bar"></div>
-                    <div class="row-title-text">PM Service &amp;<br>Spare Parts</div>
+                    <div class="row-title-text">Sale and Service </div>
                 </div>
                 <div class="row-col-details">
                     <ul class="row-details-list">
@@ -872,65 +861,21 @@
                 </div>
             </div>
 
-            <!-- 8. Boiler Repair -->
             <div class="service-row-card blue-bar" onclick="openCategoryModal('Boiler Repair', 'งานซ่อมแซมตัวหม้อต้มและอุปกรณ์ประกอบ', [
                 {
                     client: 'Panel Plus Company Limited',
                     title: 'Furnace Wall & Boiler Tube Leak Repair',
                     desc: 'งานซ่อมแซมเปลี่ยนท่อ Boiler ที่รั่วซึม และซ่อมแซมส่วนประกอบภายในเตาเผา',
                     location: 'Songkhla',
-                    link: './project-detail.html?id=panel-repair'
+                    link: 'service-boiler-pm.html'
                 }
             ])">
-                <div class="row-col-title">
-                    <div class="title-accent-bar"></div>
-                    <div class="row-title-text">Boiler<br>Repair</div>
-                </div>
-                <div class="row-col-details">
-                    <ul class="row-details-list">
-                        <li>ซ่อมแซม Boiler และอุปกรณ์ที่ชำรุด / เปลี่ยนท่อ Boiler ที่รั่ว</li>
-                        <li>ซ่อมแซมเตาเผาและส่วนประกอบภายใน Boiler</li>
-                        <li>ปรับปรุงและแก้ไขระบบ Boiler ให้กลับมาใช้งานได้ปกติ</li>
-                    </ul>
-                </div>
-                <div class="row-col-image">
-                    <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Boiler Repair">
-                    <div class="click-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูผลงาน</div>
-                </div>
-            </div>
-
-            <!-- 9. Insulation -->
-            <div class="service-row-card" onclick="openCategoryModal('Insulation Work', 'งานหุ้มฉนวนกันความร้อนทุกส่วนของ Boiler', [
-                {
-                    client: 'Biomass Power Plant Project',
-                    title: 'Steam Pipe & Boiler Insulation Cladding',
-                    desc: 'งานหุ้มฉนวนท่อไอน้ำ ท่อความร้อน และแผ่นครอบฉนวนอลูมิเนียมกันความร้อนสูญเสีย',
-                    location: 'Southern Area',
-                    link: './project-detail.html?id=insulation'
-                }
-            ])">
-                <div class="row-col-title">
-                    <div class="title-accent-bar"></div>
-                    <div class="row-title-text">Insulation<br>Work</div>
-                </div>
-                <div class="row-col-details">
-                    <ul class="row-details-list">
-                        <li>หุ้มฉนวนกันความร้อน Boiler / หุ้มฉนวนท่อไอน้ำและท่อร้อน</li>
-                        <li>เปลี่ยนและซ่อมแซมฉนวนที่ชำรุด</li>
-                        <li>ติดตั้งแผ่นหุ้ม / แผ่นครอบฉนวนทุกส่วนของบอยเลอร์</li>
-                    </ul>
-                </div>
-                <div class="row-col-image">
-                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80" alt="Insulation Work">
-                    <div class="click-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูผลงาน</div>
-                </div>
             </div>
 
         </div>
 
     </div>
 
-    <!-- POPUP MODAL LIGHTBOX -->
     <div class="modal" id="categoryModal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></span>
@@ -938,17 +883,14 @@
             <p id="modalCategorySub" style="font-size: 14px; color: #667799; margin-bottom: 20px;">Category Subtitle</p>
             
             <div class="modal-project-list" id="modalProjectList">
-                <!-- Projects render here dynamically -->
-            </div>
+                </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 TTB Boiler Engineering Co., Ltd. All Rights Reserved.</p>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT -->
     <script>
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
@@ -969,7 +911,7 @@
                         <div class="client-badge"><i class="fa-solid fa-building"></i> ${item.client}</div>
                         <h4>${item.title} <i class="fa-solid fa-arrow-right-long"></i></h4>
                         <p>${item.desc}</p>
-                        <div style="font-size: 12px; font-weight: 700; color: #002b7f;"><i class="fa-solid fa-location-dot"></i> สถานที่: ${item.location} (คลิกดูรายละเอียดฉบับเต็ม)</div>
+                        <div style="font-size: 12px; font-weight: 700; color: #002b7f;"><i class="fa-solid fa-location-dot"></i> สถานที่: ${item.location} (คลิกดูรายละเอียดผลงานฉบับเต็ม)</div>
                     </a>
                 `;
                 projectListContainer.innerHTML += projectHTML;
